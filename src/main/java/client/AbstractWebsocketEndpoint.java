@@ -16,7 +16,7 @@ public abstract class AbstractWebsocketEndpoint implements WebsocketEndpoint {
         this.sender = sender;
     }
 
-    public abstract void connect();
+    public abstract Session connect();
 
     @OnMessage
     public abstract void onMessage(String message);

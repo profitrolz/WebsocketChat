@@ -20,14 +20,11 @@ public class SimpleWebsocketEndpoint extends AbstractWebsocketEndpoint {
         this.sender = sender;
     }
 
-    public void connect() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter your name: ");
-        sender = in.nextLine();
+    public Session connect() {
 
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-            container.connectToServer(this, endpointURI);
+            return container.connectToServer(this, endpointURI);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

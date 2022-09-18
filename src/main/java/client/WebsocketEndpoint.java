@@ -6,8 +6,7 @@ import javax.websocket.*;
 import java.net.URI;
 
 public interface WebsocketEndpoint {
-    void connect();
+    Session connect();
     void onMessage(String message);
     void onOpen(Session session);
-    void sendMessage(String message);
 }
