@@ -12,11 +12,11 @@ public abstract class AbstractWebsocketEndpoint implements WebsocketEndpoint {
         this.messageHandler = messageHandler;
     }
 
-    public void setSender(String sender) {
+    protected void setSender(String sender) {
         this.sender = sender;
     }
 
-    public abstract void start();
+    public abstract void connect();
 
     @OnMessage
     public abstract void onMessage(String message);

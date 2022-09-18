@@ -9,9 +9,10 @@ import java.util.Scanner;
 public class WebsocketClientApp {
 
     public static void main(String[] args){
-        WebsocketEndpoint simpleWebsocketEndpointEndpoint = new SimpleWebsocketClient().connect(new URI("ws://localhost:5555/chat"));
+        WebsocketEndpoint simpleWebsocketEndpointEndpoint = new SimpleWebsocketClient().getWebsocketEndpoint();
+        simpleWebsocketEndpointEndpoint.connect();
+
         Listener listener = ( websocketClient -> {
-            websocketClient.start();
             ObjectMapper objectMapper = new ObjectMapper();
             Scanner in = new Scanner(System.in);
             while (in.hasNext()) {
